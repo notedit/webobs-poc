@@ -102,13 +102,14 @@ func channel(c *gin.Context) {
 				refresher := mediaserver.NewRefresher(2000)
 				refresher.AddStream(incomingStream)
 
-				outgoingStream := transport.CreateOutgoingStream2(stream.Clone())
-				outgoingStream.AttachTo(incomingStream)
-				answer.AddStream(outgoingStream.GetStreamInfo())
+				// outgoingStream := transport.CreateOutgoingStream2(stream.Clone())
+				// outgoingStream.AttachTo(incomingStream)
+				// answer.AddStream(outgoingStream.GetStreamInfo())
 
 				if len(incomingStream.GetVideoTracks()) > 0 {
 
 					pipeline := gstrtmp.CreatePipeline("rtmp://localhost/live/live")
+
 					pipeline.Start()
 
 					videoTrack := incomingStream.GetVideoTracks()[0]
@@ -148,13 +149,12 @@ func index(c *gin.Context) {
 
 func main() {
 	godotenv.Load()
-	mediaserver.EnableDebug(true)
-	mediaserver.EnableLog(true)
 	address := ":8000"
 	if os.Getenv("port") != "" {
 		address = ":" + os.Getenv("port")
 	}
 	r := gin.Default()
+	r.Static("/public", "./public")
 	r.LoadHTMLFiles("./public/index.html")
 	r.GET("/channel", channel)
 	r.GET("/", index)
