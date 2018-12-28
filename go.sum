@@ -22,11 +22,14 @@ github.com/notedit/gstreamer-rtmp v0.0.0-20181226050148-9295bf2f2ca8 h1:Bqzzyc2A
 github.com/notedit/gstreamer-rtmp v0.0.0-20181226050148-9295bf2f2ca8/go.mod h1:29rZyet7mlIPMGC4Ol9kGLL9JRIpt0YbBmg1NUXM5NY=
 github.com/notedit/media-server-go v0.0.0-20181225184224-ba45acf0f3ea h1:Dmyq3HruuW8fmT+EKPKKy/ypIK3Vtv++9xfFBS3IgSo=
 github.com/notedit/media-server-go v0.0.0-20181225184224-ba45acf0f3ea/go.mod h1:a2tVGyH6IegghSpIrj03Y+kjr5jrYCEctNEFIloGrQc=
+github.com/notedit/media-server-go v0.1.2 h1:L6qBjjIvQuKUrmwGQweJueJwu5VHMbV0m7I6cKwZqKU=
+github.com/notedit/media-server-go v0.1.2/go.mod h1:a2tVGyH6IegghSpIrj03Y+kjr5jrYCEctNEFIloGrQc=
 github.com/sanity-io/litter v1.1.0 h1:BllcKWa3VbZmOZbDCoszYLk7zCsKHz5Beossi8SUcTc=
 github.com/sanity-io/litter v1.1.0/go.mod h1:CJ0VCw2q4qKU7LaQr3n7UOSHzgEMgcGco7N/SkZQPjw=
 github.com/ugorji/go/codec v0.0.0-20181209151446-772ced7fd4c2 h1:EICbibRW4JNKMcY+LsWmuwob+CRS1BmdRdjphAm9mH4=
 github.com/ugorji/go/codec v0.0.0-20181209151446-772ced7fd4c2/go.mod h1:VFNgLljTbGfSG7qAOspJ7OScBnGdDN/yBr0sguwnwf0=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
+gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/go-playground/validator.v8 v8.18.2 h1:lFB4DoMU6B626w8ny76MV7VX6W2VHct2GVOI3xgiMrQ=
 gopkg.in/go-playground/validator.v8 v8.18.2/go.mod h1:RX2a/7Ha8BgOhfk7j780h4/u/RRjR0eouCJSH80/M2Y=
 gopkg.in/yaml.v2 v2.2.2 h1:ZCJp+EgiOT7lHqUV2J862kp8Qj64Jo6az82+3Td9dZw=
