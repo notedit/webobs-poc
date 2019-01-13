@@ -10,7 +10,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
 	"github.com/joho/godotenv"
-	gstrtmp "github.com/notedit/gstreamer-rtmp"
 	mediaserver "github.com/notedit/media-server-go"
 	"github.com/notedit/media-server-go/sdp"
 )
@@ -98,33 +97,33 @@ func channel(c *gin.Context) {
 			for _, stream := range offer.GetStreams() {
 				incomingStream := transport.CreateIncomingStream(stream)
 
-				refresher := mediaserver.NewRefresher(2000)
+				refresher := mediaserver.NewRefresher(3000)
 				refresher.AddStream(incomingStream)
 
 				// outgoingStream := transport.CreateOutgoingStream2(stream.Clone())
 				// outgoingStream.AttachTo(incomingStream)
 				// answer.AddStream(outgoingStream.GetStreamInfo())
 
-				if len(incomingStream.GetVideoTracks()) > 0 {
+				// if len(incomingStream.GetVideoTracks()) > 0 {
 
-					pipeline := gstrtmp.CreatePipeline("rtmp://localhost/live/live")
+				// 	pipeline := gstrtmp.CreatePipeline("rtmp://localhost/live/live")
 
-					pipeline.Start()
+				// 	pipeline.Start()
 
-					videoTrack := incomingStream.GetVideoTracks()[0]
+				// 	videoTrack := incomingStream.GetVideoTracks()[0]
 
-					duplicater := mediaserver.NewMediaStreamDuplicater(videoTrack, func(frame []byte, duration uint, timestamp uint) {
+				// 	duplicater := mediaserver.NewMediaStreamDuplicater(videoTrack, func(frame []byte, duration uint, timestamp uint) {
 
-						fmt.Println("media frame ===========")
-						if len(frame) <= 4 {
-							return
-						}
-						pipeline.Push(frame)
+				// 		fmt.Println("media frame ===========")
+				// 		if len(frame) <= 4 {
+				// 			return
+				// 		}
+				// 		pipeline.Push(frame)
 
-					})
-					fmt.Println(duplicater)
+				// 	})
+				// 	fmt.Println(duplicater)
 
-				}
+				// }
 			}
 
 			ws.WriteJSON(Message{
@@ -136,7 +135,6 @@ func channel(c *gin.Context) {
 }
 
 func index(c *gin.Context) {
-	fmt.Println("helloworld")
 	c.HTML(http.StatusOK, "index.html", gin.H{})
 }
 
